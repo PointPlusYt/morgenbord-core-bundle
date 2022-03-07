@@ -1,0 +1,8 @@
+services:
+    _defaults:
+            autowire: true
+            autoconfigure: true
+
+    # Makes sure the controllers and services benefits from autowiring
+    MorgenBord\CoreBundle\:
+        resource: '../src/'

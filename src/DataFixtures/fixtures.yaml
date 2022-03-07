@@ -1,0 +1,5 @@
+MorgenBord\Core\Entity\User:
+    user_1:
+        username: 'Djyp'
+        roles: ['ROLE_ADMIN']
+        password: '\$2y\$13\$KrFRwQ3eabsyC4zuIGuIbOwY/ajaEAMkMDmk3PN2z/aAYH19r3Dl2'

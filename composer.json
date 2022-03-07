@@ -1,0 +1,21 @@
+{
+    "name": "morgenbord/core-bundle",
+    "description": "Dummy Widget demo to help create your own widget for Morgenbord",
+    "minimum-stability": "stable",
+    "license": "MIT",
+    "type": "symfony-bundle",
+    "authors": [
+      {
+        "name": "Djyp Forest Fortin",
+        "email": "point@plus.yt"
+      }
+    ],
+    "autoload": {
+      "psr-4": {
+        "MorgenBord\\CoreBundle\\": "src/"
+      }
+    },
+    "require-dev": {
+      "phpunit/phpunit": "*"
+    }
+}
