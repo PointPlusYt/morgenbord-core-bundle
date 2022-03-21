@@ -1,6 +1,6 @@
 <?php
 
-namespace MorgenBord\Core\Entity;
+namespace MorgenBord\CoreBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;

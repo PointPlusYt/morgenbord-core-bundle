@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+
+@layer components {
+    .widget-box {
+      @apply bg-blue-grey text-sun-yellow shadow-md rounded-lg p-4;
+    }
+
+    input,textarea {
+      @apply text-dark-blue;
+    }
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind variants;
+@tailwind utilities;

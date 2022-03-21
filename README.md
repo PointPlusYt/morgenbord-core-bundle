@@ -1,3 +1,6 @@
 # MorgenbordCoreBundle
 
-This is a demo widget for [MorgenBord](https://github.com/PointPlusYt/morgenbord-core) to help you create your own widget.
+This is the Core and main dependency for [MorgenBord](https://github.com/PointPlusYt/morgenbord-core-bundle).
+
+TODO : 
+- Add a command to create users (useful to create the first user)

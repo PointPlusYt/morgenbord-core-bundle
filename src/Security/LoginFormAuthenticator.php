@@ -1,6 +1,6 @@
 <?php
 
-namespace MorgenBord\Core\Security;
+namespace MorgenBord\CoreBundle\Security;
 
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;

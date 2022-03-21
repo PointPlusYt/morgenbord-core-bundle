@@ -1,12 +1,12 @@
 <?php
 
-namespace MorgenBord\Core\Controller;
+namespace MorgenBord\CoreBundle\Controller;
 
-use MorgenBord\Core\Entity\UserWidget;
-use MorgenBord\Core\Repository\UserRepository;
-use MorgenBord\Core\Repository\UserWidgetRepository;
-use MorgenBord\Core\Widget\ParametersForms;
-use MorgenBord\Core\Widget\Registration;
+use MorgenBord\CoreBundle\Entity\UserWidget;
+use MorgenBord\CoreBundle\Repository\UserRepository;
+use MorgenBord\CoreBundle\Repository\UserWidgetRepository;
+use MorgenBord\CoreBundle\Widget\ParametersForms;
+use MorgenBord\CoreBundle\Widget\Registration;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
@@ -18,7 +18,7 @@ class BoardController extends AbstractController
     #[Route('/', name: 'board')]
     public function index(Request $request, UserWidgetRepository $userWidgetRepository, ParametersForms $parametersForms): Response
     {
-        return $this->render('board.html.twig', [
+        return $this->render('@Core/board.html.twig', [
             'userWidgets' => $userWidgetRepository->findByUser($this->getUser()),
         ]);
     }

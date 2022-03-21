@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" sizes="76x76" href="{# asset{('assets/img/apple-icon.png')} #}">
+  <link rel="icon" type="image/png" href="{# asset{('assets/img/favicon.png')} #}">
+  <title>{% block title %}Welcome!{% endblock %}</title>
+  {{ encore_entry_link_tags('fonts', null, 'core') }}
+  {{ encore_entry_link_tags('tailwind', null, 'core') }}
+  {% block javascripts %}
+    {{ encore_entry_script_tags('app', null, 'core') }}
+    {{ encore_entry_script_tags('board', null, 'core') }}
+  {% endblock %}
+</head>
+<body class="bg-gradient-to-b from-dark-blue via-dark-teal to-orange-300 font-sans font-normal min-h-screen p-4">
+  {# <nav class="text-blue-grey dark:text-orange-300 font-bold flex flex-wrap place-content-between">
+      <img src="{{ asset('images/logo_white.png')}}" alt="" class="">
+      <ul class="grid md:grid-cols-12 gap-4">
+        <li><a href="">Dashboard <i class="fa fa-camera-retro"></i></a></li>
+        <li><a href="">Dashboard 2</a></li>
+        <li><a href="">Dashboard 3</a></li>
+        <li><a href="">Dashboard 4</a></li>
+        <li><a href="">Dashboard 5</a></li>
+      </ul>
+      <div class="test">
+        <p>ICI un avatar</p>
+        <p>Dark mode switch</p>
+        <p>Lien d'ajour de widget</p>
+      </div>
+  </nav> #}
+  <div id="board" class="container mx-auto grid xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
+  {% block body %}{% endblock %}
+  </div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+{% extends '@Core/base.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+
+{% block body %}
+<div class="bg-blue-grey text-sun-yellow shadow-md xs:w-full md:w-6/12 xl:w-3/12 rounded-lg px-8 pt-6 pb-8 mb-4 flex flex-col mx-auto">
+    <form method="post">
+    {% if error %}
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    {% if app.user %}
+        <div class="mb-3">
+            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+        </div>
+    {% endif %}
+    <div class="mb-4">
+        <label class="block text-sm font-bold mb-2" for="inputUsername">
+            Username
+        </label>
+        <input class="shadow appearance-none border rounded w-full py-2 px-3" type="text" placeholder="Username" value="{{ last_username }}" name="username" id="inputUsername" autocomplete="username" required autofocus>
+    </div>
+    <div class="mb-6">
+        <label class="block text-sm font-bold mb-2" for="inputPassword">
+            Password
+        </label>
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 mb-3" id="inputPassword" type="password" placeholder="******************" name="password" autocomplete="current-password" required>
+        {# <p class="text-red text-xs italic">Please choose a password.</p> #}
+    </div>
+    <div class="flex items-center justify-between">
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+        <button class="bg-dark-teal hover:bg-dark-blue text-white font-bold py-2 px-4 rounded">Connexion</button>
+        {# <a class="inline-block align-baseline font-bold text-sm text-blue hover:text-blue-darker" href="#">
+        Forgot Password?
+        </a> #}
+    </div>
+        {#
+            Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+            See https://symfony.com/doc/current/security/remember_me.html
+
+            <div class="checkbox mb-3">
+                <label>
+                    <input type="checkbox" name="_remember_me"> Remember me
+                </label>
+            </div>
+        #}
+    </form>
+</div>
+{% endblock %}

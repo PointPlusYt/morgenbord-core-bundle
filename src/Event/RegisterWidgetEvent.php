@@ -1,8 +1,8 @@
 <?php
 
-namespace MorgenBord\Core\Event;
+namespace MorgenBord\CoreBundle\Event;
 
-use MorgenBord\Core\Entity\Widget;
+use MorgenBord\CoreBundle\Entity\Widget;
 use Symfony\Contracts\EventDispatcher\Event;
 
 class RegisterWidgetEvent extends Event

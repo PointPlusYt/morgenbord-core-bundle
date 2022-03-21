@@ -1,6 +1,6 @@
 <?php
 
-namespace MorgenBord\Core\Interfaces;
+namespace MorgenBord\CoreBundle\Interfaces;
 
 use Symfony\Component\Form\FormBuilderInterface;
 

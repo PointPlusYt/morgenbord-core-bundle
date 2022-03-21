@@ -1,4 +1,4 @@
-MorgenBord\Core\Entity\User:
+MorgenBord\CoreBundle\Entity\User:
     user_1:
         username: 'Djyp'
         roles: ['ROLE_ADMIN']

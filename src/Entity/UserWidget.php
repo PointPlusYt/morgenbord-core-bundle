@@ -1,8 +1,8 @@
 <?php
 
-namespace MorgenBord\Core\Entity;
+namespace MorgenBord\CoreBundle\Entity;
 
-use MorgenBord\Core\Repository\UserWidgetRepository;
+use MorgenBord\CoreBundle\Repository\UserWidgetRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 

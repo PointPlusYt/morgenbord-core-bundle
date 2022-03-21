@@ -6,3 +6,7 @@ services:
     # Makes sure the controllers and services benefits from autowiring
     MorgenBord\CoreBundle\:
         resource: '../src/'
+        exclude:
+            - '../vendor/morgenbord/core-bundle/src/DependencyInjection/'
+            - '../vendor/morgenbord/core-bundle/src/Migrations/'
+            - '../vendor/morgenbord/core-bundle/src/Entity/'

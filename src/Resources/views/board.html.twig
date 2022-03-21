@@ -1,0 +1,48 @@
+{% extends '@Core/base.html.twig' %}
+
+{% block title %}Hello BoardController!{% endblock %}
+
+{% block body %}
+<div class="widget-box">
+  <img src="{{ asset('bundles/core/images/logo_white.png')}}" alt="" class="">
+  Ajouter un widget :
+  {% for widget in app.request.widgets %}
+    <button @click="showForm" data-shortname="{{ widget.shortname }}" class="block"><i class="fa fa-plus-circle" aria-hidden="true"></i> {{ widget.name }}</button>
+  {% endfor %}
+  {% for widget in app.request.widgets %}
+    <div v-show="showingForm == '{{ widget.shortname }}'">
+      {% set form = get_widget_form(widget) %}
+      {{ form_start(form, {action: path('add_widget')}) }}
+      {{ form_widget(form) }}
+      <input type="hidden" name="shortname" value="{{ widget.shortname }}">
+      <button>Add {{ widget.name }}</button>
+      {{ form_end(form) }}
+    </div>
+  {% endfor %}
+  </ul>
+</div>
+{% for widget in userWidgets %}
+  <div class="widget-box relative">
+    <div class="float-right px-1" @click="toggleMenu">
+    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+    </div>
+    <div class="widget-menu text-right absolute top-10 right-3 hidden bg-blue-grey border-sun-yellow border rounded z-50 p-1">
+      <ul class="list-none">
+        <li><a href="{{ path('edit_widget', {id: widget.id}) }}">Preferences <i class="fa fa-cog" aria-hidden="true"></i></a></li>
+        <li><a href="{{ path('remove_widget', {id: widget.id}) }}">Delete <i class="fa fa-trash-o" aria-hidden="true"></i></a></li>
+      </ul>
+    </div>
+    {{ include(widget.twigFile, {'parameters' : widget|get_actual_parameters}) }}
+  </div>
+{% endfor %}
+{# <div class="widget-box sm:col-span-2 md:col-span-3">
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam temporibus dolorum cupiditate explicabo commodi, sit eaque nihil ipsa, qui est corrupti numquam adipisci deleniti ad? Nobis, aspernatur nesciunt. Facere, blanditiis!</p>
+</div> #}
+{% endblock %}
+
+{% block javascripts %}
+  {{ parent() }}
+  {# {% for encore_entry in get_widgets_entries() %}
+      {{ encore_entry_script_tags(encore_entry) }}
+  {% endfor %} #}
+{% endblock %}
