@@ -29,8 +29,10 @@
         <p>Lien d'ajour de widget</p>
       </div>
   </nav> #}
-  <div id="board" class="container mx-auto grid xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
-  {% block body %}{% endblock %}
-  </div>
+  {% block body %}
+      <div id="board" class="container mx-auto grid xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
+      {% block board %}{% endblock %}
+      </div>
+  {% endblock %}
 </body>
 </html>
