@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap'); */
 
 @layer components {
-    .widget-box {
+    /*.widget-box {
       @apply bg-blue-grey text-sun-yellow shadow-md rounded-lg p-4;
-    }
+    }*/
 
     input,textarea {
       @apply text-dark-blue;

@@ -16,6 +16,7 @@
       }
     },
     "require-dev": {
-      "phpunit/phpunit": "*"
+      "phpunit/phpunit": "*",
+      "nelmio/alice": "^2.3"
     }
 }
