@@ -1,5 +1,5 @@
 MorgenBord\CoreBundle\Entity\User:
     user_1:
-        username: 'Djyp'
+        username: 'admin'
         roles: ['ROLE_ADMIN']
-        password: '\$2y\$13\$KrFRwQ3eabsyC4zuIGuIbOwY/ajaEAMkMDmk3PN2z/aAYH19r3Dl2'
+        password: '\$2y\$13\$KrFRwQ3eabsyC4zuIGuIbOwY/ajaEAMkMDmk3PN2z/aAYH19r3Dl2' # morgenbord
