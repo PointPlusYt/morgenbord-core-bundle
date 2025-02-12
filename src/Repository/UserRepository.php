@@ -1,8 +1,8 @@
 <?php
 
-namespace MorgenBord\CoreBundle\Repository;
+namespace Morgenbord\CoreBundle\Repository;
 
-use MorgenBord\CoreBundle\Entity\User;
+use Morgenbord\CoreBundle\Entity\User;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\Security\Core\Exception\UnsupportedUserException;

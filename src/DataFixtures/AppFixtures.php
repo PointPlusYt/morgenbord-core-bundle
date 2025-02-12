@@ -1,6 +1,6 @@
 <?php
 
-namespace MorgenBord\CoreBundle\DataFixtures;
+namespace Morgenbord\CoreBundle\DataFixtures;
 
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;

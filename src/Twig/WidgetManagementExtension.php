@@ -1,10 +1,10 @@
 <?php
 
-namespace MorgenBord\CoreBundle\Twig;
+namespace Morgenbord\CoreBundle\Twig;
 
-use MorgenBord\CoreBundle\Entity\UserWidget;
-use MorgenBord\CoreBundle\Entity\Widget;
-use MorgenBord\CoreBundle\Widget\ParametersForms;
+use Morgenbord\CoreBundle\Entity\UserWidget;
+use Morgenbord\CoreBundle\Entity\Widget;
+use Morgenbord\CoreBundle\Widget\ParametersForms;
 use Symfony\Component\HttpKernel\KernelInterface;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFilter;

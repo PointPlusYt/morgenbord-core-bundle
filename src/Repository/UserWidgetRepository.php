@@ -1,9 +1,9 @@
 <?php
 
-namespace MorgenBord\CoreBundle\Repository;
+namespace Morgenbord\CoreBundle\Repository;
 
-use MorgenBord\CoreBundle\Entity\User;
-use MorgenBord\CoreBundle\Entity\UserWidget;
+use Morgenbord\CoreBundle\Entity\User;
+use Morgenbord\CoreBundle\Entity\UserWidget;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 

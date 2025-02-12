@@ -4,7 +4,7 @@ services:
             autoconfigure: true
 
     # Makes sure the controllers and services benefits from autowiring
-    MorgenBord\CoreBundle\:
+    Morgenbord\CoreBundle\:
         resource: '../src/'
         exclude:
             - '../vendor/morgenbord/core-bundle/src/DependencyInjection/'

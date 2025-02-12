@@ -1,12 +1,12 @@
 <?php
 
-namespace MorgenBord\CoreBundle\Controller;
+namespace Morgenbord\CoreBundle\Controller;
 
-use MorgenBord\CoreBundle\Entity\UserWidget;
-use MorgenBord\CoreBundle\Repository\UserRepository;
-use MorgenBord\CoreBundle\Repository\UserWidgetRepository;
-use MorgenBord\CoreBundle\Widget\ParametersForms;
-use MorgenBord\CoreBundle\Widget\Registration;
+use Morgenbord\CoreBundle\Entity\UserWidget;
+use Morgenbord\CoreBundle\Repository\UserRepository;
+use Morgenbord\CoreBundle\Repository\UserWidgetRepository;
+use Morgenbord\CoreBundle\Widget\ParametersForms;
+use Morgenbord\CoreBundle\Widget\Registration;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;

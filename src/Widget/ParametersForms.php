@@ -1,9 +1,9 @@
 <?php
 
-namespace MorgenBord\CoreBundle\Widget;
+namespace Morgenbord\CoreBundle\Widget;
 
-use MorgenBord\CoreBundle\Entity\UserWidget;
-use MorgenBord\CoreBundle\Entity\Widget;
+use Morgenbord\CoreBundle\Entity\UserWidget;
+use Morgenbord\CoreBundle\Entity\Widget;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\Form\FormFactoryInterface;
 

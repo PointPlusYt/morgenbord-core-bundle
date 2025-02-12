@@ -1,6 +1,6 @@
 <?php
 
-namespace MorgenBord\CoreBundle\DependencyInjection;
+namespace Morgenbord\CoreBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;

@@ -1,6 +1,6 @@
 {
     "name": "morgenbord/core-bundle",
-    "description": "The core bundle needed to use MorgenBord and its widgets",
+    "description": "The core bundle needed to use Morgenbord and its widgets",
     "minimum-stability": "stable",
     "license": "MIT",
     "type": "symfony-bundle",
@@ -12,7 +12,7 @@
     ],
     "autoload": {
       "psr-4": {
-        "MorgenBord\\CoreBundle\\": "src/"
+        "Morgenbord\\CoreBundle\\": "src/"
       }
     },
     "require-dev": {

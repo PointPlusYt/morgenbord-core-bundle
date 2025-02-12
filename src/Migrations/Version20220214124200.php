@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MorgenBord\CoreBundle\Migrations;
+namespace Morgenbord\CoreBundle\Migrations;
 
 use Doctrine\DBAL\Schema\Schema;
 use Doctrine\Migrations\AbstractMigration;

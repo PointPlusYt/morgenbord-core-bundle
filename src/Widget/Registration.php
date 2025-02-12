@@ -1,10 +1,10 @@
 <?php
 
-namespace MorgenBord\CoreBundle\Widget;
+namespace Morgenbord\CoreBundle\Widget;
 
-use MorgenBord\CoreBundle\Entity\User;
-use MorgenBord\CoreBundle\Entity\UserWidget;
-use MorgenBord\CoreBundle\Entity\Widget;
+use Morgenbord\CoreBundle\Entity\User;
+use Morgenbord\CoreBundle\Entity\UserWidget;
+use Morgenbord\CoreBundle\Entity\Widget;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
 

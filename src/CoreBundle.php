@@ -1,6 +1,6 @@
 <?php
 
-namespace MorgenBord\CoreBundle;
+namespace Morgenbord\CoreBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

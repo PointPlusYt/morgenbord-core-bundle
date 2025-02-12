@@ -1,9 +1,9 @@
 <?php
 
-namespace MorgenBord\CoreBundle\EventSubscriber;
+namespace Morgenbord\CoreBundle\EventSubscriber;
 
-use MorgenBord\CoreBundle\Event\RegisterWidgetEvent;
-use MorgenBord\CoreBundle\Widget\ParametersForms;
+use Morgenbord\CoreBundle\Event\RegisterWidgetEvent;
+use Morgenbord\CoreBundle\Widget\ParametersForms;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
