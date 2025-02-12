@@ -2,7 +2,7 @@
     "name": "morgenbord/core-bundle",
     "description": "The core bundle needed to use Morgenbord and its widgets",
     "minimum-stability": "stable",
-    "license": "MIT",
+    "license": "AGPLv3",
     "type": "symfony-bundle",
     "authors": [
       {
