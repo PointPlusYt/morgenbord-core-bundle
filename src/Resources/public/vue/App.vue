@@ -26,11 +26,11 @@ export default {
     }
   },
   computed: (() => {
-    const componentFiles = require.context('../public/bundles', true, /\.vue$/);
+    const componentFiles = require.context('../../', true, /^(?!App\.vue$).*\.vue$/);
     const components = {};
     for (const file of componentFiles.keys()) {
         const name = file.replace(/^\.\//, '').replace(/\.\w+$/, '').replace(/^.+\//, '');
-        components[name] = () => defineAsyncComponent(() => import(`../public/bundles/${file.replace(/^\.\//, '')}`));
+        components[name] = () => defineAsyncComponent(() => import(`../../${file.replace(/^\.\//, '')}`));
     }
     return components;
   })(),

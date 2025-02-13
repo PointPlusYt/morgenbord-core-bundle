@@ -3,8 +3,7 @@
     "app": {
       "js": [
         "/bundles/core/build/runtime.js",
-        "/bundles/core/build/vendors-node_modules_core-js_internals_a-constructor_js-node_modules_core-js_modules_es_objec-2d060a.js",
-        "/bundles/core/build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_core-js_modules_es_ob-1c4c4d.js",
+        "/bundles/core/build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js.js",
         "/bundles/core/build/app.js"
       ],
       "css": [
@@ -14,17 +13,13 @@
     "board": {
       "js": [
         "/bundles/core/build/runtime.js",
-        "/bundles/core/build/vendors-node_modules_core-js_internals_a-constructor_js-node_modules_core-js_modules_es_objec-2d060a.js",
-        "/bundles/core/build/vendors-node_modules_core-js_modules_es_array_concat_js-node_modules_core-js_modules_es_array-b4d7d9.js",
+        "/bundles/core/build/vendors-node_modules_vue-loader_dist_exportHelper_js-node_modules_core-js_modules_es_array_fo-843ec5.js",
         "/bundles/core/build/board.js"
       ]
     },
     "tailwind": {
       "js": [
         "/bundles/core/build/runtime.js"
-      ],
-      "css": [
-        "/bundles/core/build/tailwind.css"
       ]
     },
     "fonts": {
@@ -32,7 +27,7 @@
         "/bundles/core/build/runtime.js"
       ],
       "css": [
-        "/bundles/core/build/vendors-node_modules_fontsource_fira-sans_300_css-node_modules_fontsource_fira-sans_400_css-n-d5c494.css"
+        "/bundles/core/build/vendors-node_modules_fontsource_fira-sans_300_css-node_modules_fontsource_fira-sans_400_css-n-119a12.css"
       ]
     }
   }

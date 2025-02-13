@@ -2,7 +2,7 @@
     "name": "morgenbord/core-bundle",
     "description": "The core bundle needed to use Morgenbord and its widgets",
     "minimum-stability": "stable",
-    "license": "AGPLv3",
+    "license": "AGPL-3.0-or-later",
     "type": "symfony-bundle",
     "authors": [
       {
@@ -19,6 +19,6 @@
       "phpunit/phpunit": "*"
     },
     "require": {
-        "nelmio/alice": "^3.14"
+        "symfony/ux-vue": "^2.23"
     }
 }

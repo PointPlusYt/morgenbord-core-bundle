@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@components .widget-box {
+  /* @apply bg-base text-yellow shadow-md rounded-lg p-4; */
+  /* @apply bg-base; */
+}
+
+/* @components  input,textarea {
+  @apply text-blue;
+} */
