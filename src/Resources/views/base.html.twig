@@ -5,12 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="apple-touch-icon" sizes="76x76" href="{# asset{('assets/img/apple-icon.png')} #}">
   <link rel="icon" type="image/png" href="{# asset{('assets/img/favicon.png')} #}">
-  <title>{% block title %}Welcome!{% endblock %}</title>
-  {{ encore_entry_link_tags('fonts') }}
-  {{ encore_entry_link_tags('tailwind') }}
+  <title>{% block title %}Morgenbord{% endblock %}</title>
+  {{ encore_entry_link_tags('app') }}
+  {# {{ encore_entry_link_tags('fonts') }}
+  {{ encore_entry_link_tags('tailwind') }} #}
   {% block javascripts %}
     {{ encore_entry_script_tags('app') }}
-    {{ encore_entry_script_tags('board') }}
+    {# {{ encore_entry_script_tags('board') }} #}
   {% endblock %}
 </head>
 <body class="bg-base font-sans font-normal min-h-screen p-4">

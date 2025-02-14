@@ -3,7 +3,10 @@
 {% block title %}Hello BoardController!{% endblock %}
 
 {% block board %}
-<div class="widget-box">
+
+<div {{ vue_component('Hello', { 'name': app.user.username }) }}></div>
+
+{# <div class="widget-box">
   <img src="{{ asset('bundles/core/images/logo_white.png')}}" alt="" class="">
   Ajouter un widget :
   {% for widget in app.request.widgets %}
