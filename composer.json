@@ -17,8 +17,5 @@
     },
     "require-dev": {
       "phpunit/phpunit": "*"
-    },
-    "require": {
-        "symfony/ux-vue": "^2.23"
     }
 }
