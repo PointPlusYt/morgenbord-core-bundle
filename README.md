@@ -7,4 +7,11 @@ TODO :
 
 ## Documentation
 
-Find it on 
+Find it on https://pointplusyt.github.io/morgenbord-documentation/
+
+## Notes on config to add on hull
+
+- line in bundles list
+- line in config/packages/doctrine_migrations.yaml
+- config/routes/morgenbord_core.yaml
+- 

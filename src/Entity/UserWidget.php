@@ -6,35 +6,25 @@ use Morgenbord\CoreBundle\Repository\UserWidgetRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 
-/**
- * @ORM\Entity(repositoryClass=UserWidgetRepository::class)
- */
+#[ORM\Entity(repositoryClass: UserWidgetRepository::class)]
 class UserWidget extends Widget
 {
-    /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
-     * @Groups({"widget"})
-     */
+    #[Groups(["widget"])]
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column(type: 'integer')]
     private $id;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="userWidgets")
-     * @ORM\JoinColumn(nullable=false)
-     * @Groups({"widget"})
-     */
+    #[Groups(["widget"])]
+    #[ORM\ManyToOne(targetEntity:User::class, inversedBy:"userWidgets")]
+    #[ORM\JoinColumn(nullable:false)]
     private $owner;
 
-    /**
-     * @ORM\Column(type="json")
-     * @Groups({"widget"})
-     */
+    #[Groups(["widget"])]
+    #[ORM\Column(type: 'json')]
     private $parameters;
 
-    /**
-     * @ORM\Column(type="json", nullable=true)
-     */
+    #[ORM\Column(type: 'json', nullable: true)]
     private $data = [];
 
     public function getId(): ?int

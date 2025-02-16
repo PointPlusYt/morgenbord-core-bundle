@@ -20,9 +20,11 @@
           "Morgenbord\\CoreBundle\\Tests\\": "tests/"
       }
     },
-    "require-dev": {
+    "require": {
       "doctrine/doctrine-fixtures-bundle": "^3.4",
-      "nelmio/alice": "^2.3",
+      "nelmio/alice": "^2.3"
+    },
+    "require-dev": {
       "phpunit/phpunit": "*"
     }
 }

@@ -2,33 +2,24 @@
 
 namespace Morgenbord\CoreBundle\Entity;
 
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 
-/**
- * @ORM\MappedSuperclass
- */
+#[ORM\MappedSuperclass]
 class Widget
 {
-    /**
-     * @Groups({"widget"})
-     */
+    #[Groups(["widget"])]
     private $name;
 
-    /**
-     * @Groups({"widget"})
-     */
+    #[Groups(["widget"])]
     private $shortName;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     * @Groups({"widget"})
-     */
+    #[Groups(["widget"])]
+    #[ORM\Column(type: Types::STRING, length: 255)]
     private $parameterFormFqcn;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
+    #[ORM\Column(type: Types::STRING, length: 255)]
     private $twigFile;
 
     public function getName()
