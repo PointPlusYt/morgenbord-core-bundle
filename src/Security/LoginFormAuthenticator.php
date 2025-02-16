@@ -19,7 +19,7 @@ class LoginFormAuthenticator extends AbstractLoginFormAuthenticator
 {
     use TargetPathTrait;
 
-    public const LOGIN_ROUTE = 'app_login';
+    public const LOGIN_ROUTE = 'morgenbord_login';
 
     private UrlGeneratorInterface $urlGenerator;
 

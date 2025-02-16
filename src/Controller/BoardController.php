@@ -18,7 +18,7 @@ class BoardController extends AbstractController
     #[Route('/', name: 'board')]
     public function index(Request $request, UserWidgetRepository $userWidgetRepository, ParametersForms $parametersForms): Response
     {
-        return $this->render('@Core/board.html.twig', [
+        return $this->render('@MorgenbordCore/board.html.twig', [
             'userWidgets' => $userWidgetRepository->findByUser($this->getUser()),
         ]);
     }
