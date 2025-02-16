@@ -15,7 +15,14 @@
         "Morgenbord\\CoreBundle\\": "src/"
       }
     },
+    "autoload-dev": {
+      "psr-4": {
+          "Morgenbord\\CoreBundle\\Tests\\": "tests/"
+      }
+    },
     "require-dev": {
+      "doctrine/doctrine-fixtures-bundle": "^3.4",
+      "nelmio/alice": "^2.3",
       "phpunit/phpunit": "*"
     }
 }

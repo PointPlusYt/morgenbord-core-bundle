@@ -3,10 +3,8 @@ services:
             autowire: true
             autoconfigure: true
 
-    # Makes sure the controllers and services benefits from autowiring
     Morgenbord\CoreBundle\:
         resource: '../src/'
         exclude:
             - '../vendor/morgenbord/core-bundle/src/DependencyInjection/'
-            - '../vendor/morgenbord/core-bundle/src/Migrations/'
             - '../vendor/morgenbord/core-bundle/src/Entity/'

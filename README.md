@@ -4,3 +4,7 @@ This is the Core and main dependency for [Morgenbord](https://github.com/PointPl
 
 TODO : 
 - Add a command to create users (useful to create the first user)
+
+## Documentation
+
+Find it on 
