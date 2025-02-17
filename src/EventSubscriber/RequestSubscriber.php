@@ -23,7 +23,6 @@ class RequestSubscriber implements EventSubscriberInterface
     public function onKernelRequest(RequestEvent $event)
     {
         $request = $event->getRequest();
-        // $request->widgets = [];
 
         $registerWidgetEvent = new RegisterWidgetEvent();
         $registerWidgetEvent->parametersForms = $this->parametersForms;
@@ -32,7 +31,8 @@ class RequestSubscriber implements EventSubscriberInterface
             $registerWidgetEvent,
             RegisterWidgetEvent::NAME
         );
-        
+
+        // TODO : stop dynamic assignment
         $request->widgets = $registerWidgetEvent->getWidgets();
 
     }

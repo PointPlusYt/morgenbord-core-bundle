@@ -4,9 +4,9 @@
 
 {% block board %}
 
-<div {{ vue_component('Hello', { 'name': app.user.username }) }}></div>
+{# <div {{ vue_component('Hello', { 'name': app.user.username }) }}></div> #}
 
-{# <div class="widget-box">
+<div class="widget-box">
   <img src="{{ asset('bundles/core/images/logo_white.png')}}" alt="" class="">
   Ajouter un widget :
   {% for widget in app.request.widgets %}
@@ -38,9 +38,6 @@
     {{ include(widget.twigFile, {'parameters' : widget|get_actual_parameters}) }}
   </div>
 {% endfor %}
-{# <div class="widget-box sm:col-span-2 md:col-span-3">
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam temporibus dolorum cupiditate explicabo commodi, sit eaque nihil ipsa, qui est corrupti numquam adipisci deleniti ad? Nobis, aspernatur nesciunt. Facere, blanditiis!</p>
-</div> #}
 {% endblock %}
 
 {% block javascripts %}

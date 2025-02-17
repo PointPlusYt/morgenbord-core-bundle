@@ -10,6 +10,8 @@ class RegisterWidgetEvent extends Event
     const NAME = 'morning_bord.register_widget';
 
     private $widgets = [];
+    // TODO : make sure of what this is
+    public $parametersForms;
 
     public function getWidgets(): array
     {

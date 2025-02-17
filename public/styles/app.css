@@ -1,0 +1,45 @@
+@import "tailwindcss";
+@source "../../../../vendor/morgenbord/core-bundle/templates";
+
+@plugin "daisyui";
+@plugin "daisyui/theme" {
+    name: "catppuccin-mocha";
+    default: false;
+    prefersdark: false;
+    color-scheme: "dark";
+    --color-base-100: hsl(240deg, 21%, 15%);
+    --color-base-200: hsl(240deg, 21%, 12%);
+    --color-base-300: hsl(240deg, 23%, 9%);
+    --color-base-content: oklch(96% 0.003 264.542);
+    --color-primary: hsl(234deg, 13%, 31%);
+    --color-primary-content: hsl(226deg, 64%, 88%);
+    --color-secondary: hsl(170deg, 57%, 73%);
+    --color-secondary-content: hsl(240deg, 21%, 15%);
+    --color-accent: hsl(189deg, 71%, 73%);
+    --color-accent-content: hsl(240deg, 21%, 15%);
+    --color-neutral: hsl(237deg, 16%, 23%);
+    --color-neutral-content: oklch(98% 0.002 247.839);
+    --color-info: hsl(217deg, 92%, 76%);
+    --color-info-content: oklch(28% 0.091 267.935);
+    --color-success: hsl(115deg, 54%, 76%);
+    --color-success-content: oklch(27% 0.046 192.524);
+    --color-warning: hsl(23deg, 92%, 75%);
+    --color-warning-content: oklch(26% 0.079 36.259);
+    --color-error: hsl(343deg, 81%, 75%);
+    --color-error-content: oklch(25% 0.092 26.042);
+    --radius-selector: 0.5rem;
+    --radius-field: 0.25rem;
+    --radius-box: 0.5rem;
+    --size-selector: 0.25rem;
+    --size-field: 0.25rem;
+    --border: 1.5px;
+    --depth: 0;
+    --noise: 1;
+}
+
+:root {
+    font-family: "Fira Sans", sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Josefin Sans", sans-serif;
+}
