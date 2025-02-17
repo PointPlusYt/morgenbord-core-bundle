@@ -33,7 +33,7 @@ class BoardController extends AbstractController
         $user = $userRepository->findOneBy([]);
         $userWidget = $widgetRegistration->addUserWidget($widgetDetails, $user);
 
-        return $this->redirectToRoute('board');
+        return $this->redirectToRoute('morgenbord_board');
     }
 
     #[Route('/edit-widget/{id}', name: 'edit_widget')]
@@ -42,7 +42,7 @@ class BoardController extends AbstractController
         if ($request->getCurrentRequest()->getMethod() === 'POST') {
             $widgetDetails = $request->getCurrentRequest()->request->all();
             $userWidget = $widgetRegistration->editUserWidget($userWidget, $widgetDetails);
-            return $this->redirectToRoute('board');
+            return $this->redirectToRoute('morgenbord_board');
         } else {
             $form = $parametersForms->getForm($userWidget);
             $form->submit($userWidget->getParameters());
@@ -57,6 +57,6 @@ class BoardController extends AbstractController
     public function remove(Registration $widgetRegistration, UserWidget $userWidget): Response
     {
         $userWidget = $widgetRegistration->removeUserWidget($userWidget);
-        return $this->redirectToRoute('board');
+        return $this->redirectToRoute('morgenbord_board');
     }
 }

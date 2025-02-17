@@ -1,6 +1,6 @@
 {% extends '@MorgenbordCore/base.html.twig' %}
 
-{% block title %}Hello BoardController!{% endblock %}
+{% block title %}Morgenbord{% endblock %}
 
 {% block board %}
 
@@ -15,7 +15,7 @@
   {% for widget in app.request.widgets %}
     <div v-show="showingForm == '{{ widget.shortname }}'">
       {% set form = get_widget_form(widget) %}
-      {{ form_start(form, {action: path('add_widget')}) }}
+      {{ form_start(form, {action: path('morgenbord_add_widget')}) }}
       {{ form_widget(form) }}
       <input type="hidden" name="shortname" value="{{ widget.shortname }}">
       <button>Add {{ widget.name }}</button>
@@ -31,8 +31,8 @@
     </div>
     <div class="widget-menu text-right absolute top-10 right-3 hidden bg-blue-grey border-sun-yellow border rounded z-50 p-1">
       <ul class="list-none">
-        <li><a href="{{ path('edit_widget', {id: widget.id}) }}">Preferences <i class="fa fa-cog" aria-hidden="true"></i></a></li>
-        <li><a href="{{ path('remove_widget', {id: widget.id}) }}">Delete <i class="fa fa-trash-o" aria-hidden="true"></i></a></li>
+        <li><a href="{{ path('morgenbord_edit_widget', {id: widget.id}) }}">Preferences <i class="fa fa-cog" aria-hidden="true"></i></a></li>
+        <li><a href="{{ path('morgenbord_remove_widget', {id: widget.id}) }}">Delete <i class="fa fa-trash-o" aria-hidden="true"></i></a></li>
       </ul>
     </div>
     {{ include(widget.twigFile, {'parameters' : widget|get_actual_parameters}) }}
