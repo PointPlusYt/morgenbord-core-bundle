@@ -4,8 +4,8 @@
 @plugin "daisyui";
 @plugin "daisyui/theme" {
     name: "catppuccin-mocha";
-    default: false;
-    prefersdark: false;
+    default: true;
+    prefersdark: true;
     color-scheme: "dark";
     --color-base-100: hsl(240deg, 21%, 15%);
     --color-base-200: hsl(240deg, 21%, 12%);
