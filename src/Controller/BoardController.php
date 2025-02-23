@@ -46,7 +46,7 @@ class BoardController extends AbstractController
         } else {
             $form = $parametersForms->getForm($userWidget);
             $form->submit($userWidget->getParameters());
-            return $this->render('edit_widget.html.twig', [
+            return $this->render('@MorgenbordCore/edit_widget.html.twig', [
                 'form' => $form->createView(),
                 'userWidget' => $userWidget,
             ]);

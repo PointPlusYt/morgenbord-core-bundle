@@ -1,0 +1,4 @@
+morgenbord_core:
+    resource: '@MorgenbordCoreBundle/src/Controller/'
+    type: attribute
+    name_prefix: morgenbord_

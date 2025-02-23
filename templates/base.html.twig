@@ -14,17 +14,20 @@
     {# {{ encore_entry_script_tags('board') }} #}
   {% endblock %}
 </head>
-<body>
-<nav class="navbar bg-base-100 shadow-sm">
+<body class="bg-base-200">
+<nav class="navbar bg-base-300 shadow-sm">
   <div class="flex-1">
     <h1><a class="btn btn-ghost text-xl"><img src="{{ asset("build/images/icon-transparent.png") }}" class="h-full"> Morgenbord</a></h1>
   </div>
   <div class="flex-none px-3 inline-flex">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
-    </svg>
-    <input type="checkbox" class="toggle" />
+    <label>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 inline">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+      </svg>
+      <input type="checkbox" value="latte" class="toggle theme-controller" />
+    </label>
   </div>
+  {% if app.user %}
   <div class="flex-none">
     <div class="dropdown dropdown-end">
       <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
@@ -49,19 +52,10 @@
       </ul>
     </div>
   </div>
+  {% endif %}
 </nav>
-      {# <ul class="grid md:grid-cols-12 gap-4">
-        <li><a href="">Dashboard <i class="fa fa-camera-retro"></i></a></li>
-        <li><a href="">Dashboard 2</a></li>
-        <li><a href="">Dashboard 3</a></li>
-        <li><a href="">Dashboard 4</a></li>
-        <li><a href="">Dashboard 5</a></li>
-      </ul> #}
-  </nav>
   {% block body %}
-      <div id="board">
       {% block board %}{% endblock %}
-      </div>
   {% endblock %}
 </body>
 </html>

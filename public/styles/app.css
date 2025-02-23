@@ -1,9 +1,15 @@
 @import "tailwindcss";
+/* @config "../tailwind.config.js"; */
 @source "../../../../vendor/morgenbord/core-bundle/templates";
+@source "../../../../vendor/morgenbord/checklist-widget-bundle/templates";
+@source "../../../bundles/morgenbordcore/components";
+@source "../../../bundles/morgenbordchecklistwidget/Checklist.vue";
+/* @source "../../../";
+ */
 
 @plugin "daisyui";
 @plugin "daisyui/theme" {
-    name: "catppuccin-mocha";
+    name: "mocha";
     default: true;
     prefersdark: true;
     color-scheme: "dark";
@@ -34,12 +40,49 @@
     --size-field: 0.25rem;
     --border: 1.5px;
     --depth: 0;
-    --noise: 1;
+    --noise: 0;
 }
 
+@plugin "daisyui/theme" {
+    name: "latte";
+    default: false;
+    prefersdark: false;
+    color-scheme: "light";
+    --color-base-100: hsl(220deg, 23%, 95%);
+    --color-base-200: hsl(220deg, 22%, 92%);
+    --color-base-300: hsl(220deg, 21%, 89%);
+    --color-base-content: hsl(234deg, 16%, 35%);
+    --color-primary: hsl(225deg, 14%, 77%);
+    --color-primary-content: hsl(234deg, 16%, 35%);
+    --color-secondary: hsl(183deg, 74%, 35%);
+    --color-secondary-content: oklch(98% 0.018 155.826);
+    --color-accent: hsl(197deg, 97%, 46%);
+    --color-accent-content: oklch(98% 0.016 73.684);
+    --color-neutral: hsl(223deg, 16%, 83%);
+    --color-neutral-content: hsl(234deg, 16%, 35%);
+    --color-info: hsl(220deg, 91%, 54%);
+    --color-info-content: oklch(97% 0.013 236.62);
+    --color-success: hsl(109deg, 58%, 40%);
+    --color-success-content: oklch(98% 0.014 180.72);
+    --color-warning: hsl(22deg, 99%, 52%);
+    --color-warning-content: oklch(98% 0.022 95.277);
+    --color-error: hsl(347deg, 87%, 44%);
+    --color-error-content: oklch(97% 0.014 343.198);
+    --radius-selector: 0.5rem;
+    --radius-field: 0.25rem;
+    --radius-box: 0.5rem;
+    --size-selector: 0.25rem;
+    --size-field: 0.25rem;
+    --border: 1.5px;
+    --depth: 0;
+    --noise: 0;
+  }
+  
 :root {
     font-family: "Fira Sans", sans-serif;
+    background-color: var(--color-base-200);
 }
+
 h1, h2, h3, h4, h5, h6 {
     font-family: "Josefin Sans", sans-serif;
 }

@@ -3,46 +3,36 @@
 {% block title %}Morgenbord{% endblock %}
 
 {% block board %}
-
-{# <div {{ vue_component('Hello', { 'name': app.user.username }) }}></div> #}
-
-<div class="widget-box">
-  <img src="{{ asset('bundles/core/images/logo_white.png')}}" alt="" class="">
-  Ajouter un widget :
-  {% for widget in app.request.widgets %}
-    <button @click="showForm" data-shortname="{{ widget.shortname }}" class="block"><i class="fa fa-plus-circle" aria-hidden="true"></i> {{ widget.name }}</button>
-  {% endfor %}
-  {% for widget in app.request.widgets %}
-    <div v-show="showingForm == '{{ widget.shortname }}'">
-      {% set form = get_widget_form(widget) %}
-      {{ form_start(form, {action: path('morgenbord_add_widget')}) }}
-      {{ form_widget(form) }}
-      <input type="hidden" name="shortname" value="{{ widget.shortname }}">
-      <button>Add {{ widget.name }}</button>
-      {{ form_end(form) }}
-    </div>
-  {% endfor %}
-  </ul>
-</div>
-{% for widget in userWidgets %}
-  <div class="widget-box relative">
-    <div class="float-right px-1" @click="toggleMenu">
-    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
-    </div>
-    <div class="widget-menu text-right absolute top-10 right-3 hidden bg-blue-grey border-sun-yellow border rounded z-50 p-1">
-      <ul class="list-none">
-        <li><a href="{{ path('morgenbord_edit_widget', {id: widget.id}) }}">Preferences <i class="fa fa-cog" aria-hidden="true"></i></a></li>
-        <li><a href="{{ path('morgenbord_remove_widget', {id: widget.id}) }}">Delete <i class="fa fa-trash-o" aria-hidden="true"></i></a></li>
-      </ul>
-    </div>
-    {{ include(widget.twigFile, {'parameters' : widget|get_actual_parameters}) }}
+<div id="app">
+{% for widget in app.request.widgets %}
+  <button v-on:click="showForm" data-shortname="{{ widget.shortname }}" class="btn">{{ widget.name }}</button>
+  <div v-show="showingForm == '{{ widget.shortname }}'">
+    {% set form = get_widget_form(widget) %}
+    {{ form_start(form, {action: path('morgenbord_add_widget')}) }}
+    {{ form_widget(form.name, {attr: {"class": "input input-bordered"}}) }}
+    <input type="hidden" name="shortname" value="{{ widget.shortname }}">
+    <button class="btn">Add {{ widget.name }}</button>
+    {{ form_end(form) }}
   </div>
 {% endfor %}
+{% for widget in userWidgets %}
+<div class="card bg-base-100 w-96 shadow-xl">
+  <div class="card-body">
+    <div class="flex justify-between">
+      <h2 class="card-title">{{ widget.parameters.name }}</h2>
+      {{ include('@MorgenbordCore/widget_preferences_menu.html.twig', {'widgetId': widget.id}) }}
+    </div>
+
+    {{ include(widget.twigFile, {'parameters' : widget|get_actual_parameters}) }}
+  </div>
+</div>
+{% endfor %}
+</div>
 {% endblock %}
 
 {% block javascripts %}
-  {{ parent() }}
-  {# {% for encore_entry in get_widgets_entries() %}
-      {{ encore_entry_script_tags(encore_entry) }}
-  {% endfor %} #}
+{{ parent() }}
+{# {% for encore_entry in get_widgets_entries() %}
+    {{ encore_entry_script_tags(encore_entry) }}
+{% endfor %} #}
 {% endblock %}
