@@ -6,5 +6,4 @@ services:
     Morgenbord\CoreBundle\:
         resource: '../src/'
         exclude:
-            - '../vendor/morgenbord/core-bundle/src/DependencyInjection/'
             - '../vendor/morgenbord/core-bundle/src/Entity/'
