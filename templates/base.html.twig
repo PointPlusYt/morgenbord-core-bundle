@@ -7,11 +7,8 @@
   {# <link rel="icon" type="image/png" href="{{ asset('assets/img/favicon.png')}}"> #}
   <title>{% block title %}Morgenbord{% endblock %}</title>
   {{ encore_entry_link_tags('app') }}
-  {# {{ encore_entry_link_tags('fonts') }}
-  {{ encore_entry_link_tags('tailwind') }} #}
   {% block javascripts %}
     {{ encore_entry_script_tags('app') }}
-    {# {{ encore_entry_script_tags('board') }} #}
   {% endblock %}
 </head>
 <body class="bg-base-200">
