@@ -3,18 +3,7 @@
 {% block title %}Morgenbord{% endblock %}
 
 {% block board %}
-<div id="app">
-{% for widget in app.request.widgets %}
-  <button v-on:click="showForm" data-shortname="{{ widget.shortname }}" class="btn">{{ widget.name }}</button>
-  <div v-show="showingForm == '{{ widget.shortname }}'">
-    {% set form = get_widget_form(widget) %}
-    {{ form_start(form, {action: path('morgenbord_add_widget')}) }}
-    {{ form_widget(form.name, {attr: {"class": "input input-bordered"}}) }}
-    <input type="hidden" name="shortname" value="{{ widget.shortname }}">
-    <button class="btn">Add {{ widget.name }}</button>
-    {{ form_end(form) }}
-  </div>
-{% endfor %}
+<div id="board" class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 p-4">
 {% for widget in userWidgets %}
 <div class="card bg-base-100 w-96 shadow-xl">
   <div class="card-body">

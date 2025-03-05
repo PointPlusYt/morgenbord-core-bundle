@@ -12,9 +12,38 @@
   {% endblock %}
 </head>
 <body class="bg-base-200">
-<nav class="navbar bg-base-300 shadow-sm">
-  <div class="flex-1">
+<nav class="navbar bg-base-300 shadow-sm flex justify-between">
+  <div class="flex-none">
     <h1><a href="{{ path("morgenbord_board") }}" class="btn btn-ghost text-xl"><img src="{{ asset("build/images/icon-transparent.png") }}" class="h-full"> Morgenbord</a></h1>
+  </div>
+  <div class="flex-1 text-center">
+    <div class="drawer drawer-end">
+      <input id="my-drawer-4" type="checkbox" class="drawer-toggle" />
+      <div class="drawer-content">
+        <!-- Page content here -->
+        <label for="my-drawer-4" class="drawer-button btn btn-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 16.875h3.375m0 0h3.375m-3.375 0V13.5m0 3.375v3.375M6 10.5h2.25a2.25 2.25 0 0 0 2.25-2.25V6a2.25 2.25 0 0 0-2.25-2.25H6A2.25 2.25 0 0 0 3.75 6v2.25A2.25 2.25 0 0 0 6 10.5Zm0 9.75h2.25A2.25 2.25 0 0 0 10.5 18v-2.25a2.25 2.25 0 0 0-2.25-2.25H6a2.25 2.25 0 0 0-2.25 2.25V18A2.25 2.25 0 0 0 6 20.25Zm9.75-9.75H18a2.25 2.25 0 0 0 2.25-2.25V6A2.25 2.25 0 0 0 18 3.75h-2.25A2.25 2.25 0 0 0 13.5 6v2.25a2.25 2.25 0 0 0 2.25 2.25Z" />
+          </svg>
+        </label>
+      </div>
+      <div class="drawer-side z-10 text-left">
+        <label for="my-drawer-4" aria-label="close sidebar" class="drawer-overlay"></label>
+        <div class="menu bg-base-200 text-base-content min-h-full w-80 p-4">
+        {% for widget in get_registered_widgets() %}
+          <button v-on:click="showForm" data-shortname="{{ widget.shortname }}" class="btn">{{ widget.name }}</button>
+          <div v-show="showingForm == '{{ widget.shortname }}'">
+            {% set widget_list_form = get_widget_form(widget) %}
+            {{ form_start(widget_list_form, {action: path('morgenbord_add_widget')}) }}
+            {{ form_widget(widget_list_form.name) }}
+            <input type="hidden" name="shortname" value="{{ widget.shortname }}">
+            <button class="btn">Add {{ widget.name }}</button>
+            {{ form_end(widget_list_form) }}
+          </div>
+        {% endfor %}
+        </div>
+      </div>
+    </div>
   </div>
   <div class="flex-none px-3 inline-flex">
     <label>
