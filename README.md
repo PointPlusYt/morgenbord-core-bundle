@@ -14,4 +14,4 @@ Find it on https://pointplusyt.github.io/morgenbord-documentation/
 - line in bundles list
 - line in config/packages/doctrine_migrations.yaml
 - config/routes/morgenbord_core.yaml
-- 
+- form_theme in config/packages/twig.yaml
