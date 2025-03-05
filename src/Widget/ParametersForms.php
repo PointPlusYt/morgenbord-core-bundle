@@ -22,7 +22,7 @@ class ParametersForms
         return $this->getFormFromFqcn($configurationFqcn, $crsfProtection);
     }
 
-    public function getFormBuilderFromFqcn(string $configurationFqcn, $crsfProtection = false)
+    public function getFormBuilderFromFqcn(string $configurationFqcn, $crsfProtection = true)
     {
         $formBuilder = $this->formFactory->createBuilder(FormType::class, null, [
             'csrf_protection' => $crsfProtection,
@@ -35,7 +35,7 @@ class ParametersForms
         return $formBuilder;
     }
 
-    public function getFormFromFqcn(string $configurationFqcn, $crsfProtection = false)
+    public function getFormFromFqcn(string $configurationFqcn, $crsfProtection = true)
     {
         $formBuilder = $this->getFormBuilderFromFqcn($configurationFqcn, $crsfProtection);
 

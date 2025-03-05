@@ -4,6 +4,7 @@ namespace Morgenbord\CoreBundle\Twig;
 
 use Morgenbord\CoreBundle\Entity\UserWidget;
 use Morgenbord\CoreBundle\Entity\Widget;
+use Morgenbord\CoreBundle\Service\WidgetRegistry;
 use Morgenbord\CoreBundle\Widget\ParametersForms;
 use Symfony\Component\HttpKernel\KernelInterface;
 use Twig\Extension\AbstractExtension;
@@ -12,14 +13,11 @@ use Twig\TwigFunction;
 
 class WidgetManagementExtension extends AbstractExtension
 {
-    private $kernel;
-    private $parametersForms;
-
-    public function __construct(KernelInterface $kernel, ParametersForms $parametersForms)
-    {
-        $this->kernel = $kernel;
-        $this->parametersForms = $parametersForms;
-    }
+    public function __construct(
+        private KernelInterface $kernel,
+        private ParametersForms $parametersForms,
+        private WidgetRegistry $widgetRegistry,
+    ) { }
 
     public function getFilters(): array
     {
@@ -35,8 +33,14 @@ class WidgetManagementExtension extends AbstractExtension
     {
         return [
             new TwigFunction('get_widget_form', [$this, 'getWidgetForm']),
-            new TwigFunction('get_widgets_entries', [$this, 'getWidgetsEntries']),
+            new TwigFunction('get_registered_widgets', [$this, 'getRegisteredWidgets']),
+            // new TwigFunction('get_widgets_entries', [$this, 'getWidgetsEntries']),
         ];
+    }
+
+    public function getRegisteredWidgets(): array
+    {
+        return $this->widgetRegistry->getWidgets();
     }
 
     public function getWidgetForm(Widget $widget)
@@ -44,7 +48,7 @@ class WidgetManagementExtension extends AbstractExtension
         return $this->parametersForms->getForm($widget, true)->createView();
     }
 
-    public function getWidgetsEntries()
+/*     public function getWidgetsEntries()
     {
         $bundlesDir = $this->kernel->getProjectDir() . '/public/bundles/';
         $directoryList = scandir($bundlesDir);
@@ -62,7 +66,7 @@ class WidgetManagementExtension extends AbstractExtension
             }
         }
         return $entries;
-    }
+    } */
 
     public function getActualParameters(UserWidget $widget)
     {

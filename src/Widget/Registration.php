@@ -2,36 +2,19 @@
 
 namespace Morgenbord\CoreBundle\Widget;
 
+use Doctrine\ORM\EntityManagerInterface;
 use Morgenbord\CoreBundle\Entity\User;
 use Morgenbord\CoreBundle\Entity\UserWidget;
 use Morgenbord\CoreBundle\Entity\Widget;
-use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Component\HttpFoundation\RequestStack;
+use Morgenbord\CoreBundle\Service\WidgetRegistry;
 
 class Registration
 {
-    private $em;
-    private $parametersForms;
-    // private $request;
-    private $widgets;
-
-    public function __construct(EntityManagerInterface $em, ParametersForms $parametersForms, RequestStack $requestStack)
-    {
-        $this->parametersForms = $parametersForms;
-        $this->em = $em;
-        // $this->request = $requestStack->getCurrentRequest();
-        $this->widgets = $requestStack->getCurrentRequest()->widgets;
-    }
-
-    public function getRegisteredWidgets(): array
-    {
-        return $this->widgets;
-    }
-
-    public function getRegisteredWidget($shortname): Widget
-    {
-        return $this->widgets[$shortname];
-    }
+    public function __construct(
+        private EntityManagerInterface $em,
+        private ParametersForms $parametersForms,
+        private WidgetRegistry $widgetRegistry
+    ) { }
 
     /**
      * Undocumented function
@@ -39,12 +22,14 @@ class Registration
      * @param Widget $registeredWidget
      * @return UserWidget
      */
-    public function createUserWidget(Widget $registeredWidget): UserWidget
+    public function createUserWidget(Widget $registeredWidget, User $user): UserWidget
     {
         $userWidget = new UserWidget();
         $userWidget->setParameterFormFqcn($registeredWidget->getParameterFormFqcn());
         $userWidget->setTwigFile($registeredWidget->getTwigFile());
-
+        $userWidget->setOwner($user);
+        $userWidget->setName($registeredWidget->getName());
+        $userWidget->setShortName($registeredWidget->getShortName());
         return $userWidget;
     }
 
@@ -57,11 +42,10 @@ class Registration
      */
     public function addUserWidget(array $widgetDetails, User $user)
     {
-        $registeredWidget = $this->getRegisteredWidget($widgetDetails['shortname']);
-        // dd($registeredWidget);
+        $registeredWidget = $this->widgetRegistry->getWidget($widgetDetails['shortname']);
+
         // Créer un objet à mettre en BDD avec sa configuration.
-        $userWidget = $this->createUserWidget($registeredWidget);
-        $userWidget->setOwner($user);
+        $userWidget = $this->createUserWidget($registeredWidget, $user);
 
         $this->parametersForms->loadParameters($userWidget, $widgetDetails['form']);
 
